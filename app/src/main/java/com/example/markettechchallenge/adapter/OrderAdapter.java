@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.markettechchallenge.R;
 import com.example.markettechchallenge.data.model.Order;
-import com.example.markettechchallenge.data.model.ProductDetail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.tvProductPrice.setText(order.getProductPrice()+" TL");
         holder.tvOrderDetail.setText(order.getDate());
         holder.tvSummaryPrice.setText(order.getDate());
-        holder.cardView.setOnClickListener(v -> mClickListener.onItemClick());
+        holder.cardView.setOnClickListener(v -> mClickListener.onItemClick(holder.layout));
 
     }
     public void setItems(List<Order> orderList) {
@@ -69,6 +68,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvDay,tvMonth,tvMarket,tvOrderName,tvProductState,tvProductPrice,tvOrderDetail,tvSummaryPrice;
+        LinearLayout layout;
         CardView cardView;
         public ViewHolder(View itemView) {
             super(itemView);
@@ -81,9 +81,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             tvSummaryPrice = itemView.findViewById(R.id.tvSummaryPrice);
             tvProductPrice = itemView.findViewById(R.id.tvProductPrice);
             cardView = itemView.findViewById(R.id.card_view);
+            layout = itemView.findViewById(R.id.detail);
         }
     }
     public interface ItemClickListener{
-        void onItemClick();
+        void onItemClick(LinearLayout layout);
     }
 }
