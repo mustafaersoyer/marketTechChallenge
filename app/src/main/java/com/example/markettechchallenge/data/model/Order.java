@@ -10,7 +10,7 @@ public class Order {
     private String date;
     @SerializedName("month")
     @Expose
-    private String month;
+    private int month;
     @SerializedName("marketName")
     @Expose
     private String marketName;
@@ -23,9 +23,10 @@ public class Order {
     @SerializedName("productPrice")
     @Expose
     private String productPrice;
+
     @SerializedName("productDetail")
     @Expose
-    private ProductDetail productDetail;
+    public ProductDetail productDetail;
 
 
 
@@ -37,11 +38,11 @@ public class Order {
         this.date = date;
     }
 
-    public String getMonth() {
+    public int getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(int month) {
         this.month = month;
     }
 

@@ -6,5 +6,10 @@
     <color name="textColor">#ed2939</color>
     <color name="borderColor">#727171</color>
     <color name="buttonColor">#ed2939</color>
+    <color name="green">#018814</color>
+    <color name="orange">#F59E1D</color>
+    <color name="detailLayoutColor">#e1e3e4</color>
+    <color name="viewColor">#c0c0c0</color>
+    <color name="darkTextColor">#4c4c4c</color>
 
 </resources>

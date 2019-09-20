@@ -1,15 +1,15 @@
 package com.example.markettechchallenge.ui.orders;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
 
 import com.example.markettechchallenge.R;
 import com.example.markettechchallenge.adapter.OrderAdapter;

@@ -1,6 +1,9 @@
 package com.example.markettechchallenge.adapter;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.markettechchallenge.R;
 import com.example.markettechchallenge.data.model.Order;
 
+import java.text.DateFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,18 +43,37 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Order order = orderList.get(position);
-        //ProductDetail productDetail =
+        changeColor(order,holder);
         holder.tvDay.setText(order.getDate());
-        holder.tvMonth.setText(order.getMonth());
+        holder.tvMonth.setText(getMonth(order.getMonth()));
         holder.tvMarket.setText(order.getMarketName());
         holder.tvOrderName.setText(order.getOrderName());
         holder.tvProductState.setText(order.getProductState());
         holder.tvProductPrice.setText(order.getProductPrice()+" TL");
-        holder.tvOrderDetail.setText(order.getDate());
-        holder.tvSummaryPrice.setText(order.getDate());
+        holder.tvOrderDetail.setText(order.productDetail.getOrderDetail());
+        holder.tvSummaryPrice.setText(order.productDetail.getSummaryPrice()+" TL");
         holder.cardView.setOnClickListener(v -> mClickListener.onItemClick(holder.layout));
 
     }
+    private String getMonth(int month) {
+        return new DateFormatSymbols().getMonths()[month-1];
+    }
+    private void changeColor(Order order, ViewHolder holder){
+        Drawable[] compoundDrawables=holder.tvProductState.getCompoundDrawables();
+        Drawable drawableLeft=compoundDrawables[0].mutate();
+
+        if(order.getProductState().equals("Yolda")){
+            holder.tvProductState.setTextColor(mCtx.getResources().getColor(R.color.green));
+            drawableLeft.setColorFilter(new PorterDuffColorFilter(mCtx.getResources().getColor(R.color.green), PorterDuff.Mode.SRC_IN));
+        } else if (order.getProductState().equals("Hazırlanıyor")){
+            holder.tvProductState.setTextColor(mCtx.getResources().getColor(R.color.orange));
+            drawableLeft.setColorFilter(new PorterDuffColorFilter(mCtx.getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_IN));
+        }else{
+            holder.tvProductState.setTextColor(mCtx.getResources().getColor(R.color.textColor));
+            drawableLeft.setColorFilter(new PorterDuffColorFilter(mCtx.getResources().getColor(R.color.textColor), PorterDuff.Mode.SRC_IN));
+        }
+    }
+
     public void setItems(List<Order> orderList) {
         this.orderList = orderList;
         notifyDataSetChanged();

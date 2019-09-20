@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -30,22 +29,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="50sp"
-                        android:text="08"
-                        android:textColor="#4c4c4c"/>
+                        android:textColor="@color/darkTextColor"/>
                     <TextView
                         android:id="@+id/tvMonth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="20sp"
                         android:layout_gravity="center"
-                        android:text="Ekim"
-                        android:textColor="#4c4c4c"/>
-
+                        android:textColor="@color/darkTextColor"/>
                 </LinearLayout>
                 <View
                     android:layout_width="1dp"
                     android:layout_height="fill_parent"
-                    android:background="#c0c0c0"
+                    android:background="@color/viewColor"
                     android:layout_margin="7dp"/>
                 <LinearLayout
                     android:id="@+id/linear"
@@ -58,27 +54,22 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:layout_margin="10dp"
-                        android:text="Market 1"
                         android:textStyle="bold"
-                        android:textColor="#4c4c4c" />
+                        android:textColor="@color/darkTextColor" />
                     <TextView
                         android:id="@+id/tvOrderName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
-                        android:layout_margin="10dp"
-                        android:text="Şampuan"/>
+                        android:layout_margin="10dp"/>
 
                     <TextView
                         android:id="@+id/tvProductState"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:layout_margin="5dp"
-                        android:drawableLeft="@drawable/ic_stop_black_24dp"
-                        android:text="Onay Bekliyor"
-                        android:textColor="@color/buttonColor"
+                        android:drawableLeft="@drawable/ic_state"
                         android:textSize="15sp" />
-
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -89,13 +80,11 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_chevron_right_black_24dp"
                         android:layout_gravity="end"
-                        android:layout_margin="10dp"
-                        android:cropToPadding="false" />
+                        android:layout_margin="10dp"/>
                     <TextView
                         android:id="@+id/tvProductPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="25TL"
                         android:textStyle="bold"
                         android:textSize="15sp"
                         android:layout_marginRight="15dp"
@@ -109,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="90dp"
-                android:background="#e1e3e4"
+                android:background="@color/detailLayoutColor"
                 android:orientation="vertical"
                 android:visibility="gone">
 
@@ -122,9 +111,8 @@
                         android:id="@+id/tvOrderDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Şampuan 250 ml"
                         android:textSize="15sp"
-                        android:textColor="#4c4c4c"
+                        android:textColor="@color/darkTextColor"
                         android:layout_marginLeft="5dp"/>
 
                     <LinearLayout
@@ -138,8 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginRight="10dp"
-                        android:text="25TL"
-                        android:textColor="#4c4c4c"
+                        android:textColor="@color/darkTextColor"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                     </LinearLayout>
@@ -147,7 +134,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="#c0c0c0"
+                    android:background="@color/viewColor"
                     android:layout_margin="3dp" />
             </LinearLayout>
         </LinearLayout>
