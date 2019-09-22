@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(editTextUsername.getText().toString().equals(username) && editTextPass.getText().toString().equals(pass)){
                     if (rememberMe.isChecked()){
-                        userRegister(editTextUsername.getText().toString(),editTextPass.getText().toString());
+                        setSession(editTextUsername.getText().toString(),editTextPass.getText().toString());
                         startActivity(new Intent(LoginActivity.this, OrderActivity.class));
                     }else{
                         startActivity(new Intent(LoginActivity.this, OrderActivity.class).putExtra("session",1));
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextPass = findViewById(R.id.pass);
         rememberMe = findViewById(R.id.rememberMe);
     }
-    private void userRegister(String username,String pass){
+    private void setSession(String username,String pass){
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("username",username);
         editor.putString("pass",pass);
