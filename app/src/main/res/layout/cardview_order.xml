@@ -47,9 +47,10 @@
                     android:id="@+id/linear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/rigtLayout"
                     android:orientation="vertical">
                     <TextView
-                        android:id="@+id/tvMarket"
+                        android:id="@+id/tvMarketName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
@@ -61,7 +62,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="10dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        />
 
                     <TextView
                         android:id="@+id/tvProductState"
@@ -72,10 +76,12 @@
                         android:textSize="15sp" />
                 </LinearLayout>
                 <LinearLayout
+                    android:id="@+id/rigtLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <ImageView
+                        android:id="@+id/detailImage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_chevron_right_black_24dp"

@@ -41,17 +41,23 @@
         android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
         android:background="@drawable/edittext_background"/>
 
-    <Switch
-        android:id="@+id/rememberMe"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginTop="15dp"
-        android:layoutDirection="rtl"
-        android:switchPadding="10dp"
-        android:text="Beni Hatırla" />
-
+        android:layout_marginTop="15dp">
+        <Switch
+            android:id="@+id/rememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Beni Hatırla"/>
+    </LinearLayout>
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"

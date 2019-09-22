@@ -18,8 +18,6 @@ import com.example.markettechchallenge.ui.orders.OrderActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
-    boolean openClose;
-
     Button btnLogin;
     EditText editTextUsername,editTextPass;
     LoginViewModel loginViewModel;
@@ -37,23 +35,6 @@ public class LoginActivity extends AppCompatActivity {
                 ViewModelProviders.of(this).get(LoginViewModel.class);
         username = loginViewModel.getUsername();
         pass = loginViewModel.getPass();
-
-       /* CardView cardView = findViewById(R.id.card_view);
-        final LinearLayout linearLayout = findViewById(R.id.detail);
-         openClose = false;
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(openClose){
-                    linearLayout.setVisibility(View.GONE);
-                    openClose = false;
-
-                }else{
-                    linearLayout.setVisibility(View.VISIBLE);
-                    openClose = true;
-                }
-            }
-        });*/
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

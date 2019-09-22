@@ -1,7 +1,10 @@
 package com.example.markettechchallenge.ui.orders;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -27,11 +30,13 @@ public class OrderActivity extends AppCompatActivity implements OrderAdapter.Ite
     OrderAdapter orderAdapter;
     Button btnExit;
     boolean openClose=true;
+    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_order);
+        sharedPref = this.getSharedPreferences("sharedPref",Context.MODE_PRIVATE);
 
         orderViewModel =
                 ViewModelProviders.of(this).get(OrderViewModel.class);
@@ -60,6 +65,10 @@ public class OrderActivity extends AppCompatActivity implements OrderAdapter.Ite
                 builder.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        SharedPreferences.Editor editor = sharedPref.edit();
+                        editor.clear();
+                        editor.commit();
+                        finish();
 
                     }
                 });
@@ -79,5 +88,5 @@ public class OrderActivity extends AppCompatActivity implements OrderAdapter.Ite
             layout.setVisibility(View.GONE);
             openClose = true;
         }
-    }
+    }//Detaylar kısmı
 }

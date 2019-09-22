@@ -57,7 +57,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
     }
     private String getMonth(int month) {
         return new DateFormatSymbols().getMonths()[month-1];
-    }
+    } //Ay ismi yazma
     private void changeColor(Order order, ViewHolder holder){
         Drawable[] compoundDrawables=holder.tvProductState.getCompoundDrawables();
         Drawable drawableLeft=compoundDrawables[0].mutate();
@@ -72,7 +72,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             holder.tvProductState.setTextColor(mCtx.getResources().getColor(R.color.textColor));
             drawableLeft.setColorFilter(new PorterDuffColorFilter(mCtx.getResources().getColor(R.color.textColor), PorterDuff.Mode.SRC_IN));
         }
-    }
+    }//Duruma göre renk değiştirme
 
     public void setItems(List<Order> orderList) {
         this.orderList = orderList;
@@ -97,7 +97,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
             super(itemView);
             tvDay = itemView.findViewById(R.id.tvDay);
             tvMonth = itemView.findViewById(R.id.tvMonth);
-            tvMarket = itemView.findViewById(R.id.tvMarket);
+            tvMarket = itemView.findViewById(R.id.tvMarketName);
             tvOrderName = itemView.findViewById(R.id.tvOrderName);
             tvProductState = itemView.findViewById(R.id.tvProductState);
             tvOrderDetail = itemView.findViewById(R.id.tvOrderDetail);
